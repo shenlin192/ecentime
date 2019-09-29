@@ -1,11 +1,12 @@
 import React from 'react';
 import {
-  StyleSheet, View, TouchableOpacity, Linking,
+  StyleSheet, View, TouchableOpacity,
 } from 'react-native';
 import { Image, Text } from 'react-native-elements';
 import Collapsible from 'react-native-collapsible';
 import mockData from './mockData';
-import { TEXT_COLOR } from '../../../../consts';
+import { defaultLightText } from '../../../../consts';
+import { openLink } from '../../../../services';
 
 const styles = StyleSheet.create({
   container: {
@@ -31,7 +32,7 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
   },
   collapseSectionText: {
-    color: TEXT_COLOR,
+    ...defaultLightText,
     fontSize: 13,
     lineHeight: 18,
   },
@@ -74,13 +75,7 @@ export class Introduction extends React.Component {
   };
 
   handleLink = () => {
-    Linking.canOpenURL(mockData.url).then((supported) => {
-      if (supported) {
-        Linking.openURL(mockData.url);
-      } else {
-        alert(`Can not open URI: ${mockData.url}`);
-      }
-    });
+    openLink(mockData.url);
   };
 
   render() {
@@ -93,7 +88,7 @@ export class Introduction extends React.Component {
         >
           <Image
             style={styles.bgImage}
-            source={require('./medias/company.png')}
+            source={mockData.bgSource}
           />
         </TouchableOpacity>
         <Collapsible collapsed={!expanded}>
@@ -123,7 +118,7 @@ export class Introduction extends React.Component {
           </TouchableOpacity>
           <Image
             style={styles.logo}
-            source={require('./medias/logo.png')}
+            source={mockData.logoSource}
           />
         </View>
         <View style={styles.watchBrandContainer}>

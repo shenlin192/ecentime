@@ -1,25 +1,24 @@
 import React from 'react';
 import {
-  StyleSheet, View, Text, Image, ScrollView,
+  StyleSheet, View, Text, ScrollView,
 } from 'react-native';
-import { Button, Icon } from 'react-native-elements';
+import { Divider } from 'react-native-elements';
 import { Introduction } from './components/introduction';
 import { Footer } from './components/footer';
 import { Info } from './components/info';
-import { TEXT_COLOR, THEME_COLOR } from '../../consts';
+import { HeaderLeft } from './components/headerLeft';
+import { HeaderRight } from './components/headerRight';
+import {
+  SEPARATOR_COLOR, THEME_COLOR,
+} from '../../consts';
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
-  headerRight: {
-    flexDirection: 'row',
-    marginRight: 16,
-  },
-  viewNumber: {
-    marginLeft: 3,
-    color: TEXT_COLOR,
-    lineHeight: 18,
+  divider: {
+    backgroundColor: SEPARATOR_COLOR,
+    marginHorizontal: 18,
   },
 });
 
@@ -29,36 +28,8 @@ export class Promotion extends React.Component {
     headerStyle: {
       backgroundColor: navigation.getParam('showBG') ? THEME_COLOR : 'transparent',
     },
-    headerLeft: (
-      <Button
-        titleProps={{
-          style: {
-            color: TEXT_COLOR,
-            fontSize: 18,
-            marginLeft: -10,
-          },
-        }}
-        buttonStyle={{
-          padding: 0,
-        }}
-        title="返回"
-        type="clear"
-        icon={(
-          <Icon
-            name="chevron-left"
-            size={35}
-            color={TEXT_COLOR}
-          />
-        )}
-        onPress={() => navigation.navigate('Welcome')}
-      />
-    ),
-    headerRight: (
-      <View style={styles.headerRight}>
-        <Image source={require('./medias/eye.png')} />
-        <Text style={styles.viewNumber}>{navigation.getParam('viewNumber')}</Text>
-      </View>
-    ),
+    headerLeft: <HeaderLeft navigation={navigation} />,
+    headerRight: <HeaderRight navigation={navigation} />,
   });
 
   state = {
@@ -67,7 +38,8 @@ export class Promotion extends React.Component {
   };
 
   componentDidMount() {
-    this.props.navigation.setParams({
+    const { navigation } = this.props;
+    navigation.setParams({
       viewNumber: 666,
       showBG: false,
     });
@@ -116,6 +88,10 @@ export class Promotion extends React.Component {
             updateExpandedState={this.updateExpandedState}
           />
           <Info />
+          <Divider style={styles.divider} />
+          <Text>hello</Text>
+          <Text>hello</Text>
+          <Text>hello</Text>
         </ScrollView>
         <Footer />
       </View>
