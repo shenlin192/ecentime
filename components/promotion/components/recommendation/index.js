@@ -11,6 +11,7 @@ const styles = StyleSheet.create({
   },
   title: {
     ...boldText,
+    marginBottom: 10,
   },
   content: {
     ...lightText,

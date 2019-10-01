@@ -8,10 +8,12 @@ import { Footer } from './components/footer';
 import { Info } from './components/info';
 import { HeaderLeft } from './components/headerLeft';
 import { HeaderRight } from './components/headerRight';
+import { Recommendation } from './components/recommendation';
+import { PopularItems } from './components/popularItems';
+import { RelevantImages } from './components/relevantImages';
 import {
   SEPARATOR_COLOR, THEME_COLOR,
 } from '../../consts';
-import { Recommendation } from './components/recommendation';
 
 const styles = StyleSheet.create({
   container: {
@@ -22,10 +24,11 @@ const styles = StyleSheet.create({
     shadowColor: '#979797',
     shadowOffset: {
       width: 0,
-      height: 3,
+      height: 0,
     },
     shadowRadius: 8,
-    shadowOpacity: 1.0,
+    shadowOpacity: 0.2,
+    marginBottom: 50,
   },
   divider: {
     backgroundColor: SEPARATOR_COLOR,
@@ -102,9 +105,8 @@ export class Promotion extends React.Component {
             <Info />
             <Divider style={styles.divider} />
             <Recommendation />
-            <Text>hello</Text>
-            <Text>hello</Text>
-            <Text>hello</Text>
+            <PopularItems />
+            <RelevantImages />
           </View>
         </ScrollView>
         <Footer />

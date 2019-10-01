@@ -9,11 +9,6 @@ export const defaultLightText = {
   fontFamily: PF_LIGHT,
 };
 
-export const defaultMediumText = {
-  color: TEXT_COLOR,
-  fontFamily: PF_MEDIUM,
-};
-
 export const boldText = {
   color: TEXT_COLOR,
   fontFamily: PF_MEDIUM,

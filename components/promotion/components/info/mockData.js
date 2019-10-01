@@ -7,7 +7,7 @@ export default {
       content: `<p style="font-size: 42px; line-height: 65px">
                         <a href="https://www.sephora.fr/" style="text-decoration: none; color: #4A90E2">Sephora</a>
                         全场满60欧即可享受75折，
-                        仅限24小时，La mer、Fresh、Tom ford买起来！
+                        <b>仅限24小时</b>，La mer、Fresh、Tom ford买起来！
                             <a
                                 style="text-decoration: none; color: #4A90E2" 
                                 href="https://www.sephora.fr/p/j-adore---eau-de-parfum-P3087.html">红点商品

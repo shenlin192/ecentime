@@ -20,6 +20,15 @@ const styles = StyleSheet.create({
   itemDesc: {
     ...lightText,
   },
+  tooltipContainer: {
+    backgroundColor: '#404040',
+    borderRadius: 50,
+    width: 80,
+  },
+  popover: {
+    ...lightText,
+    color: '#FFFFFF',
+  },
   codeContainer: {
     flexDirection: 'row',
     backgroundColor: 'rgba(0,0,0,0.04)',
@@ -55,7 +64,8 @@ export class CodeField extends React.Component {
             <View key={item.code} style={styles.itemContainer}>
               <Text style={styles.itemDesc}>{item.desc}</Text>
               <Tooltip
-                popover={<Text>已复制</Text>}
+                containerStyle={styles.tooltipContainer}
+                popover={<Text style={styles.popover}>已复制</Text>}
                 withPointer={false}
                 onOpen={() => this.copyCode(item.code)}
 

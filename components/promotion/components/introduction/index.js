@@ -28,7 +28,7 @@ const styles = StyleSheet.create({
     height: 145,
     paddingTop: 25,
     paddingHorizontal: 20,
-    borderBottomColor: '#979797',
+    borderBottomColor: '#F5F5F5',
     borderBottomWidth: 1,
   },
   collapseSectionText: {
