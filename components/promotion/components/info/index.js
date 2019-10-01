@@ -12,16 +12,6 @@ import { boldText, defaultLightText, SEPARATOR_COLOR } from '../../../../consts'
 import mockData from './mockData';
 
 const styles = StyleSheet.create({
-  container: {
-    backgroundColor: '#FFFFFF',
-    shadowColor: '#979797',
-    shadowOffset: {
-      width: 0,
-      height: 3,
-    },
-    shadowRadius: 8,
-    shadowOpacity: 1.0,
-  },
   textSection: {
     paddingTop: 39,
     paddingHorizontal: 9,
@@ -45,7 +35,7 @@ const styles = StyleSheet.create({
 export class Info extends React.Component {
   render() {
     return (
-      <View style={styles.container}>
+      <View>
         <View style={styles.textSection}>
           <Text style={styles.slogan}>
             {mockData.slogan}

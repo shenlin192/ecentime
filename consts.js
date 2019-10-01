@@ -19,6 +19,8 @@ export const boldText = {
   fontFamily: PF_MEDIUM,
   fontSize: 15,
   lineHeight: 21,
+  letterSpacing: 0,
+  textAlign: 'justify',
 };
 
 export const lightText = {
@@ -26,4 +28,6 @@ export const lightText = {
   fontFamily: PF_LIGHT,
   fontSize: 15,
   lineHeight: 21,
+  letterSpacing: 0,
+  textAlign: 'justify',
 };
