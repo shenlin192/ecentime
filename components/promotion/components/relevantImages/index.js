@@ -6,7 +6,7 @@ import * as Permissions from 'expo-permissions';
 import { Asset } from 'expo-asset';
 import { Image } from 'react-native-elements';
 import Modal from 'react-native-modal';
-import { openLink } from '../../../../services';
+import { defaultErrorHandler, openLink } from '../../../../services';
 import { boldText } from '../../../../consts';
 import mockData from './mockData';
 
@@ -69,10 +69,6 @@ const styles = StyleSheet.create({
     height: 22,
   },
 });
-
-const defaultErrorHandler = (e) => {
-  console.log(e);
-};
 
 export class RelevantImages extends React.Component {
   state = {

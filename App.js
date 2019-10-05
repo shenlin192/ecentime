@@ -5,10 +5,14 @@ import * as Font from 'expo-font';
 import { AppLoading } from 'expo';
 import { Welcome } from './components/welcome';
 import { Promotion } from './components/promotion';
+import { Internal } from './components/internal';
+import NavigationService from './services/navigationService';
+import { defaultErrorHandler } from './services';
 
 const RootStack = createStackNavigator({
   Promotion,
   Welcome,
+  Internal,
 });
 
 const AppContainer = createAppContainer(RootStack);
@@ -32,9 +36,15 @@ export default class App extends React.Component {
         <AppLoading
           startAsync={this.loadAssets} // this loads the fonts
           onFinish={() => this.setState({ fontLoaded: true })}
-          onError={e => console.error(e)}
+          onError={defaultErrorHandler}
         />
-      ) : <AppContainer />
+      ) : (
+        <AppContainer
+          ref={(navigatorRef) => {
+            NavigationService.setTopLevelNavigator(navigatorRef);
+          }}
+        />
+      )
     );
   }
 }

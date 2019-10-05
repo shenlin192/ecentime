@@ -56,7 +56,7 @@ export default {
         },
         {
           desc: '新年专区直达',
-          link: '',
+          link: 'https://www.ecentime.com/deal',
         },
       ],
       type: 'links',

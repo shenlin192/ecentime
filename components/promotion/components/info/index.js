@@ -59,27 +59,19 @@ export class Info extends React.Component {
               switch (field.type) {
                 case 'webView':
                   return (
-                    <WebViewField
-                      {...fieldProps}
-                    />
+                    <WebViewField {...fieldProps} />
                   );
                 case 'code':
                   return (
-                    <CodeField
-                      {...fieldProps}
-                    />
+                    <CodeField {...fieldProps} />
                   );
                 case 'text':
                   return (
-                    <TextField
-                      {...fieldProps}
-                    />
+                    <TextField {...fieldProps} />
                   );
                 case 'links':
                   return (
-                    <LinkField
-                      {...fieldProps}
-                    />
+                    <LinkField {...fieldProps} />
                   );
                 default:
                   return null;
