@@ -14,6 +14,7 @@ import { RelevantImages } from './components/relevantImages';
 import {
   SEPARATOR_COLOR, THEME_COLOR,
 } from '../../consts';
+import { RelevantPromotions } from "./components/relevantPromotions";
 
 const styles = StyleSheet.create({
   container: {
@@ -107,6 +108,7 @@ export class Promotion extends React.Component {
             <Recommendation />
             <PopularItems />
             <RelevantImages />
+            <RelevantPromotions />
           </View>
         </ScrollView>
         <Footer />

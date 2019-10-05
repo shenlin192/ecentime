@@ -10,8 +10,8 @@ import NavigationService from './services/navigationService';
 import { defaultErrorHandler } from './services';
 
 const RootStack = createStackNavigator({
-  Promotion,
   Welcome,
+  Promotion,
   Internal,
 });
 
@@ -34,7 +34,7 @@ export default class App extends React.Component {
     return (
       !fontLoaded ? (
         <AppLoading
-          startAsync={this.loadAssets} // this loads the fonts
+          startAsync={this.loadAssets}
           onFinish={() => this.setState({ fontLoaded: true })}
           onError={defaultErrorHandler}
         />

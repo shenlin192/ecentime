@@ -24,6 +24,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#404040',
     borderRadius: 50,
     width: 80,
+    marginLeft: 80,
   },
   popover: {
     ...lightText,
